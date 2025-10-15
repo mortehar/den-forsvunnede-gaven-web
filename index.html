@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Den Forsvunnede Gaven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Den Forsvunnede Gaven</h1>
+        </div>
+        
+        <div class="game-content">
+            <div class="story-text" id="storyText"></div>
+            
+            <div class="inventory" id="inventory" style="display: none;">
+                <h3>Du har:</h3>
+                <ul id="inventoryList"></ul>
+            </div>
+            
+            <div class="dice-section" id="diceSection" style="display: none;">
+                <button id="rollDice" class="dice-button">Trykk for å kaste terningen</button>
+                <div id="diceResult" class="dice-result"></div>
+            </div>
+            
+            <div class="choices" id="choices"></div>
+        </div>
+        
+        <div class="game-footer">
+            <p>Et tekstbasert eventyr</p>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

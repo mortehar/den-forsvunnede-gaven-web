@@ -1,0 +1,1302 @@
+{
+ "title" : "Den forsvunnende gaven",
+ "rooms" : [
+    {
+        "id" : "0",
+        "versions" : [
+            {
+                "text" : "Du skal finne den forsvunnede gave. Byen sier farvel og du vinker tilbake, så går du opp i det sorte tårn. Du står foran døren til den eldgamle familien Horn Molaug. Ingen vet om de lever, eller om de ligger og råtner der inne. I år tretten hundre var det en mann som sendte en gave til Horn Molaug. Siden det har ingen sett familien. Mange mennesker har der gått inn, men aldrig ut (gulp). Kanskje der inne pesten og svartedauen herjer. GÅ NÅ INN!",
+                "choices" : [
+                    {
+                        "text" : "Gå inn ...",
+                        "goto" : "1",
+                        "key" : "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "end",
+        "versions" : [
+            {
+                "triggers" : "reset_all",
+                "text" : "Som mange andre før deg, blir din skjebne at også du skal hvile for evig her i huset til Horn Molaug. Forsøk igjen hvis du våger...",
+                "choices" : [
+                    {
+                        "text" : "Prøv igjen",
+                        "goto" : "0",
+                        "key" : "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "1",
+        "versions" : [
+            {
+                "text" : "Her møter du et forferdelig syn, det er en hare drept av svartedauen. Med byller i ansiktet og på kroppen. Du står i et kryss. Vil du gå mot:",
+                "choices" : [
+                    {
+                        "text" : "Til venstre, til Det eldgamle kjøkken",
+                        "goto" : "4",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Til høyre, til Likstuen",
+                        "goto" : "6",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Fortsette rett frem innover i korridoren",
+                        "goto" : "2",
+                        "key" : "c"
+                    }
+
+
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "2",
+        "versions" : [
+            {
+                "text" : "Du står i korridoren, vendt innover i huset med inngangshallen bak deg. Mot høyre ser du en høy dør.",
+                "choices" : [
+                    {
+                        "text" : "Gå inn den høye døren til høyre",
+                        "goto" : "5",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Forsett lenger inn i huset",
+                        "goto" : "3",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Gå tilbake til inngangshallen",
+                        "goto" : "1",
+                        "key" : "c"
+                    }
+
+
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "3",
+        "versions" : [
+            {
+                "text" : "Du står i korridoren, vendt med innganghallen langt bak deg. Mot høyre ser du en smal dør. Fremover er det en stor dobbeldør.",
+                "choices" : [
+                    {
+                        "text" : "Gå inn den smale døren til høyre",
+                        "goto" : "10",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå inn den store døren rett frem",
+                        "goto" : "14",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Gå i retning inngangshallen",
+                        "goto" : "2",
+                        "key" : "c"
+                    }
+
+
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "4",
+        "versions" : [
+            {
+                "text" : "Du kjenner noe over hode. En hodepine møter deg. Slå terning...",
+                "dice" : [
+                    {
+                        "val" : "1-2",
+                        "text" : "Du faller død om",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "3-6",
+                        "text" : "Hodet ditt blir straks kvitt smertene",
+                        "goto" : "7"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "5",
+        "versions" : [
+            {
+                "text" : "Du møter en forferdelig stank. Slå terning...",
+                "dice" : [
+                    {
+                        "val" : "1-2",
+                        "text" : "Du dør",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "3-4",
+                        "text" : "Du blir langpint, og dør til slutt",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "5-6",
+                        "text" : "Du spurter ut, og du føler deg øm i nesen, men det går bra.",
+                        "goto" : "2"
+                    }
+
+                ]
+            },
+            {
+                "conditions" : {
+                    "items" : ["gassmaske"]
+                },
+                "text" : "Du merker en underlig lukt, og tar på deg gassmasken.",
+                "choices" : [
+                    {
+                        "text" : "Let rundt",
+                        "goto" : "16",
+                        "key" : "a"
+                    }
+                ]
+            }
+
+        ]
+    },
+    {
+        "id" : "6",
+        "versions" : [
+            {
+                "text" : "Du kommer inn i en gammel stue. Der ligger det to lik. En i sofaen, han har nok sluppet unna svartedauen. Det andre liket sitter i en stol, uten hode.",
+                "choices" : [
+                    {
+                        "text" : "Undersøke lommene på liket i sofaen",
+                        "goto" : "12",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå tilbake til inngangshallen",
+                        "goto" : "1",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Undersøk hatten til liket i stolen",
+                        "goto" : "11",
+                        "key" : "c"
+                    }
+
+
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "7",
+        "versions" : [
+            {
+                "text" : "Du puster lettet ut, og setter deg på stolen. Foran deg ser du snor 1, 2 og 3. Hvis du vil så trekk.",
+                "choices" : [
+                    {
+                        "text" : "Trekk i snor 1",
+                        "goto" : "13",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå tilbake til inngangshallen",
+                        "goto" : "1",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Trekk i snor 2",
+                        "goto" : "13",
+                        "comment" : "Har slått sammen 13 og 17 da det ikke er synlig at disse er samme uten bok",
+                        "key" : "c"
+                    },
+                    {
+                        "text" : "Trekk i snor 3",
+                        "goto" : "24",
+                        "key" : "d"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "8",
+        "versions" : [
+            {
+                "text" : "Du ser på nøkkelen.",
+                "items": [
+                    { "label" : "nøkkel_99",
+                      "inventory" : "Nøkkel merket 'nr 99'",
+                      "lyric" : "Nøkkelen har nr 99 på seg. Du plukker den opp."
+                  }
+              ],
+                "choices" : [
+                    {
+                        "text" : "Forsett",
+                        "goto" : "10",
+                        "key" : "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "9.1",
+        "versions" : [
+            {
+                "text" : "Du er innerst i rommet. På gulvet ligger et åpent skrin.",
+                "items" : [
+                    {
+                        "lyric" : "Det ligger en nøkkel i skrinet merket '99', som du tar med deg.",
+                        "inventory" : "En nøkkel merket '99'",
+                        "label" : "nøkkel_99"
+                    }],
+                "choices" : [
+                    {
+                        "text" : "Gå ut av rommet",
+                        "goto" : "3",
+                        "key" : "b"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "9.2",
+        "versions" : [
+            {
+                "text" : "Du skrur på kranen, men i samme øyenblikk kjenner du en gass. Slå terning...",
+                "dice" : [
+                    {
+                        "val" : "1",
+                        "text" : "Du er død",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "2",
+                        "text" : "Du er død, men hadde overlevd hvis du hadde hatt en gassmaske",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "3-6",
+                        "achievements" : [{"label" : "gass_i_rom_10"}],
+                        "text" : "Du går ut av rommet, og tenker at du aldri må komme inn hit uten bedre hjelpemidler",
+                        "goto" : "3"
+                    }
+
+                ]
+            },
+            {
+                "conditions" : {
+                "items" : ["gassmaske"]},
+                "text" : "Du skrur på kranen, men i samme øyenblikk kjenner du en gass. Slå terning...",
+                "dice" : [
+                    {
+                        "val" : "1",
+                        "text" : "Du er død",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "2-6",
+                        "achievements" : [{"label" : "gass_i_rom_10"}],
+                        "text" : "Du går ut av rommet",
+                        "goto" : "3"
+                    }
+
+                ]
+            }
+
+        ]
+    },
+    {
+        "id" : "10",
+        "versions" : [
+            {
+                "text" : "I rommet ser du en kran, og du skimter noe innerst i rommet.",
+                "choices" : [
+                    {
+                        "text" : "Gå innerst i rommet",
+                        "goto" : "9.1",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå ut av rommet",
+                        "goto" : "3",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Skru på kranen",
+                        "goto" : "9.2",
+                        "key" : "c"
+                    }
+                ]
+            },
+            {
+                "conditions" : {
+                    "items" : ["gassmaske"],
+                    "achievements" : ["gass_i_rom_10"]
+                },
+                "text" : "Det er en forferdelig gass her, og du tar på deg gassmasken.",
+                "dice" : [
+                    {
+                        "val" : "1",
+                        "text" : "Du er død",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "2-6",
+                        "text" : "Du klarer å oppholde deg i rommet en kort stund",
+                        "goto" : "9.1"
+                    }
+
+                ]
+            },
+            {
+                "conditions" : {
+                    "not_items" : ["gassmaske"],
+                    "achievements" : ["gass_i_rom_10"]
+                },
+                "text" : "Det er en forferdelig gass her.",
+                "dice" : [
+                    {
+                        "val" : "1-3",
+                        "text" : "Du er død",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "4-6",
+                        "text" : "Du klarer å oppholde deg i rommet er kort stund",
+                        "goto" : "9.1"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "11",
+        "versions" : [
+            {
+                "text" : "I det du undersøker hatten begynner liket å røre på seg.",
+                "choices" : [
+                    {
+                        "text" : "Vil du rømme",
+                        "goto" : "1",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Vil du gå bort til liket i sofaen",
+                        "goto" : "12",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Sloss",
+                        "goto" : "15",
+                        "key" : "c"
+                    }
+                ]
+            },
+            {
+                "text" : "Det er ingenting i hatten etter at du tok rubinen.",
+                "conditions" : {"achievements" : ["lik_stol_død"]},
+                "choices" : [
+                    {
+                        "text" : "Fortsett",
+                        "goto" : "6",
+                        "key" : "a"
+                    }
+                ]
+            }
+
+        ]
+    },
+    {
+        "id" : "12",
+        "versions" : [
+            {
+                "text" : "Idet du rører ved liket reiser det seg, og du må slåss",
+                "comment" : "Håndterer også rom 25",
+                "dice" : [
+                    {
+                        "val" : "1",
+                        "text" : "Du blir most i hendene på liket",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "2-4",
+                        "text" : "Du overlever denne runden, men klarer ikke bekjempe liket",
+                        "goto" : "12"
+                    },
+                    {
+                        "val" : "5-6",
+                        "text" : "Du moser nevven din inn i magen hans",
+                        "goto" : "18"
+                    }
+
+                ]
+            },
+            {
+                "text" : "Liket er livløst",
+                "conditions" : {
+                    "achievements" : ["lik_sofa_død"]
+                },
+                "choices" : [
+                    {
+                        "text" : "Forsett",
+                        "goto" : "6",
+                        "key" : "a"
+                    }
+                ]
+            },
+            {
+                "conditions" : {
+                    "items" : ["rubin"]
+                },
+                "text" : "Idet du rører ved liket reiser det seg. På instinkt holder du frem rubinen mot liket, og du ser at det har en kraftig effekt.",
+                "comment" : "TODO: dette skal ikke skje dersom lik_sofa_død. Har ikke logikk for å håndere prioritering, eller negativ logikk",
+                "choices" : [
+                    {
+                        "text" : "Forsett",
+                        "goto" : "18",
+                        "key" : "a"
+                    }
+                ]
+            },
+            {
+                "conditions" : {"achievements" : ["svartedauen"]},
+                "text" : "Du prøver å kjempe...",
+                "choices" : [
+                    {
+                        "key" : "a",
+                        "text" : "Du klarer ikke kjempe, utmattet av svartedauen",
+                        "goto" : "end"
+                    }
+                ]
+            }          
+        ]
+    },
+    {
+        "id" : "18",
+        "versions" : [
+            {
+                "text" : "Du hører ett langsomt stønn, og liket faller ned. Du leter i lommene, og finner en lapp. Som det står 'der hvor du trekker, trekk i tre'",
+                "choices" : [
+                    {
+                        "text" : "Ta lappen og gå ut",
+                        "goto" : "6",
+                        "key" : "a",
+                        "achievements" : [{"label" : "lik_sofa_død"}],
+                        "items" : [
+                            {
+                                "lyric" : "na",
+                                "inventory" : "En lapp hvor det står 'der hvor du trekker, trekk i tre'",
+                                "label" : "lapp"
+                            }
+                        ]
+
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "13",
+        "versions" : [
+            {
+                "text" : "Feil! Slå terning:",
+                "dice" : [
+                    {
+                        "val" : "1-3",
+                        "text" : "Du dør",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "4-6",
+                        "text" : "Du overlever, men trekker du feil neste gang er du død untatt ved kast 6.",
+                        "achievements" : [{"label" : "snor_feil_tidligere"}],
+                        "goto" : "7"
+                    }
+
+                ]
+            },
+            {
+                "conditions" : {
+                    "achievements" : ["snor_feil_tidligere"]
+                },
+                "text" : "Feil! Slå terning... Siden du allerede har trukket feil må du nå få 6 ...",
+                "dice" : [
+                    {
+                        "val" : "1-5",
+                        "text" : "Du dør",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "6",
+                        "text" : "Du overlever",
+                        "goto" : "7"
+                    }
+
+                ]
+            }
+
+        ]
+    },
+    {
+        "id" : "14",
+        "versions" : [
+            {
+                "text" : "Du står inne i et stort rom",
+                "comment" : "Har lagt til mulighet for å returnere til korridor, kontra orginalen",
+                "choices" : [
+                    {
+                        "text" : "Slå på kassetspilleren",
+                        "goto" : "19",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Spark til prøvedukken",
+                        "goto" : "21",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Let blant knoklene",
+                        "goto" : "20",
+                        "key" : "c"
+                    },
+                    {
+                        "text" : "Gå ut døren tilbake til inngangskorridoren",
+                        "goto" : "3",
+                        "key" : "d"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "15",
+        "versions" : [
+            {
+                "text" : "Du må bruke terning:",
+                "dice" : [
+                    {
+                        "val" : "1",
+                        "text" : "Du blir slått ihjel",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "2",
+                        "text" : "Du overlever hvis du får 5 eller 6 i neste kast",
+                        "goto" : "15",
+                        "achievements" : [{"label" : "skadet_i_15"}]
+                    },
+                    {
+                        "val" : "3-6",
+                        "text" : "Du knekker bena hans, og han faller om.",
+                        "achievements" : [{"label" : "lik_stol_død"}],
+                        "goto" : "22"
+                    }
+
+                ]
+            },
+            {
+                "conditions" : {"achievements" : ["svartedauen"]},
+                "text" : "Du prøver å kjempe...",
+                "choices" : [
+                    {
+                        "key" : "a",
+                        "text" : "Du klarer ikke kjempe, utmattet av svartedauen",
+                        "goto" : "end"
+                    }
+                ]
+            },
+            {
+                "conditions" : {"achievements" : ["skadet_i_15"]},
+                "text" : "Du må bruke terning:",
+                "dice" : [
+                    {
+                        "val" : "1-4",
+                        "text" : "Du blir slått ihjel",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "5-6",
+                        "text" : "Du knekker bena hans, og han faller om.",
+                        "achievements" : [{"label" : "lik_stol_død"}],
+                        "goto" : "22"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "22",
+        "versions" : [
+            {
+                "text" : "Du ser noe som blinker i hatten hans.",
+                "items" : [
+                    {
+                        "lyric" : "Det er en vakker rubin",
+                        "inventory" : "En rubin",
+                        "label" : "rubin"
+                    }],
+                "choices" : [
+                    {
+                        "text" : "Ta rubinen",
+                        "goto" : "6",
+                        "key" : "a"
+                    }
+                ]
+
+
+            }
+        ]
+    },
+
+    {
+        "id" : "16",
+        "versions" : [
+            {
+                "text" : "Du leter rundt...",
+                "items" : [
+                    {
+                        "lyric" : "Og finner en nøkkel merket '66'",
+                        "inventory" : "En nøkkel merket '66'",
+                        "label" : "nøkkel_66",
+                        "autoloot" : "false"
+                    }],
+                "choices" : [
+                    {
+                        "text" : "Ta nøkkelen og gå ut",
+                        "goto" : "2",
+                        "key" : "a",
+                        "get_item" : "nøkkel_66"
+                    },
+                    {
+                        "text" : "Gå ut",
+                        "goto" : "2",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Kast nøkkel merket '66' i do",
+                        "goto" : "23",
+                        "get_item" : "nøkkel_66",
+                        "key" : "c"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "19",
+        "versions" : [
+            {
+                "text" : "Du slår på kassetspilleren, og du hører en eldgammel sang.",
+                "choices" : [
+                    {
+                        "text" : "Slå av kassetspilleren",
+                        "comment" : "TODO: feil i orginalen, går bare tilbake til 19... Har også fjernet mulighet for å gå direkte ut av rommet, for må da holde på kassetspiller-tilstand",
+                        "goto" : "14",
+                        "key" : "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "20",
+        "versions" : [
+            {
+                "text" : "Det rasler når du roter i knoklene, en rotte piler frem og biter deg i leggen. Slå terning.",
+                "comment" : "Her har jeg tatt friheten til å utvide svartedauen-området, da man uansett er fortapt",
+                "dice" : [
+                    {
+                        "val" : "1",
+                        "text" : "Du dør",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "2-5",
+                        "text" : "Du blir rammet av svartedauen, så hvis du vil kan du fortsette, men du dør direkte hvis du havner i en slåsskamp",
+                        "goto" : "14",
+                        "achievements" : [{"label" : "svartedauen"}]
+                    },
+
+                    {
+                        "val" : "6",
+                        "text" : "Du overlever",
+                        "goto" : "14"
+                    }
+
+                ]
+            },
+            {
+                "text" : "Det rasler når du roter i knoklene, en rotte piler frem og biter deg i leggen. Slå terning.",
+                "conditions" : {"achievements" : ["svartedauen"]},
+                "choices" : [
+                    {
+                        "key" : "a",
+                        "text" : "Du stryker med, utmattet av svartedauen",
+                        "goto" : "end"
+                    }
+                ]
+            }
+
+        ]
+    },
+    {
+        "id" : "21",
+        "versions" : [
+            {
+                "text" : "Prøvedukken faller til side og en lemm kommer til syne",
+                "choices" : [
+                    {
+                        "text" : "Gå inn lemmen",
+                        "goto" : "26",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå ut av rommet",
+                        "goto" : "3",
+                        "key" : "b"
+                    }
+                ]
+            }
+        ]
+    },   
+    {
+        "id" : "23",
+        "versions" : [
+            {
+                "text" : "Du kaster nøkkelen i do, og trekker så opp. Da hører du en stemme som sier 'Think you'.",
+                "choices" : [
+                    {
+                        "text" : "Gå ut av rommet",
+                        "del_item" : "nøkkel_66",
+                        "goto" : "2",
+                        "key" : "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "24",
+        "versions" : [
+            {
+                "text" : "En gulvplanke spretter opp. Du ser en kiste.",
+                "choices" : [
+                    {
+                        "text" : "Opne kisten",
+                        "goto" : "28",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå ut av rommet",
+                        "goto" : "1",
+                        "key" : "b"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "26",
+        "versions" : [
+            {
+                "text" : "Du kommer inn i et rom hvor det er tre dører.",
+                "choices" : [
+                    {
+                        "text" : "Hvis du vil prøve å åpne døren merket 66",
+                        "goto" : "29.1",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Hviss du vil prøve å åpne den ulåste døren gå til",
+                        "goto" : "30",
+                        "key" : "b"
+                    },
+                    {
+                        "text" : "Hviss du vil prøve å åpne dør merket 99",
+                        "goto" : "31.1",
+                        "key" : "c"
+                    },
+                    {
+                        "text" : "Gå ut av rommet, tilbake opp lemmen",
+                        "goto" : "14",
+                        "key" : "d"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "27",
+        "versions" : [
+            {
+                "text" : "Du gjør deg klar til kamp. Slå terning.",
+                "dice" : [
+                    {
+                        "val" : "1",
+                        "text" : "Du blir knust",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "2",
+                        "text" : "Du overlever hvis du får 5-6 neste gang",
+                        "goto" : "27",
+                        "achievements" : [{"label" : "skadet_i_27"}]
+                    },
+
+                    {
+                        "val" : "3-6",
+                        "text" : "Du river ut kjøttet hans, og skinnet skjærer du opp",
+                        "goto" : "29.2",
+                        "achievements" : [{"label" : "monster_død"}]
+                    }
+
+                ]
+            },
+            {
+                "conditions" : {"achievements" : ["svartedauen"]},
+                "text" : "Du prøver å kjempe...",
+                "choices" : [
+                    {
+                        "key" : "a",
+                        "text" : "Du klarer ikke kjempe, utmattet av svartedauen",
+                        "goto" : "end"
+                    }
+                ]
+            },            
+            {
+                "conditions" : {"achievements" : ["skadet_i_27"]},
+                "text" : "Du gjør deg klar til kamp. Slå terning.",
+                "dice" : [
+                    {
+                        "val" : "1-4",
+                        "text" : "Du blir knust",
+                        "goto" : "end"
+                    },
+                    {
+                        "val" : "5-6",
+                        "text" : "Du river ut kjøttet hans, og skinnet skjærer du opp",
+                        "goto" : "29.2",
+                        "achievements" : [{"label" : "monster_død"}]
+                    }
+
+                ]
+            }
+
+        ]
+    },
+    {    
+        "id" : "28",
+        "versions" : [
+            {
+                "text" : "Du ser inni kisten",
+                "items" : [{"label" : "gassmaske", "lyric" : "Du ser en gassmaske som du tar med", "inventory" : "Gassmaske"}],
+                "choices" : [
+                    {
+                        "text" : "Gå ut av rommet",
+                        "goto" : "1",
+                        "key" : "a"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "29.1",
+        "versions" : [
+            {
+                "text" : "Døren er låst, og du har ingen nøkler som passer i låsen.",
+                "choices" : [
+                    {
+                        "text" : "Forsett",
+                        "goto" : "26",
+                        "key" : "a"
+                    }
+                ]
+            },
+            {
+                "text" : "Du bruker nøkkelen din merket 66, og låser opp døren.",
+                "conditions" : {"items" : ["nøkkel_66"]},
+                "choices" : [
+                    {
+                        "text" : "Gå inn døren",
+                        "goto" : "29.2",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "La den være",
+                        "goto" : "26",
+                        "key" : "b"
+                    }
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "29.2",
+        "versions" : [
+            {
+                "text" : "Forran deg ser du en murvegg. Plutselig kommer et monster frem.",
+                "choices" : [
+                    {
+                        "text" : "Slåss",
+                        "goto" : "27",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå ut",
+                        "goto" : "26",
+                        "key" : "b"
+                    }
+
+
+                ]
+            },
+            {
+                "text" : "Det er en knust murvegg i rommet.",
+                "conditions" : {"achievements" : ["monster_død", "murvegg_knust"]},
+                "comment" : "Dette dekker for rom 34",
+                "choices" : [
+                    {
+                        "text" : "Gå gjennom åpningen i den knuste murveggen",
+                        "goto" : "37",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå ut",
+                        "goto" : "26",
+                        "key" : "b"
+                    }
+
+
+                ]
+            },
+            {
+                "text" : "Det er en murvegg i rommet.",
+                "conditions" : {"achievements" : ["monster_død"], "not_achievements" : ["murvegg_knust"]},
+                "comment" : "Dette dekker for rom 34",
+                "choices" : [
+                    {
+                        "text" : "Prøv å slå ut murveggen",
+                        "goto" : "32",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå ut",
+                        "goto" : "26",
+                        "key" : "b"
+                    }
+
+
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "30",
+        "versions" : [
+            {
+                "text" : "Forran deg ser du en jernhanske.",
+                "choices" : [
+                    {
+                        "text" : "Gå ut",
+                        "goto" : "26",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Ta hansken på deg",
+                        "goto" : "33",
+                        "key" : "b"
+                    }
+
+
+                ]
+            },
+            {
+                "text" : "Det er ikke lenger noe av interesse her.",
+                "conditions" : {"items" : ["jernhanske"]},
+                "choices" : [
+                    {
+                        "text" : "Gå ut",
+                        "goto" : "26",
+                        "key" : "a"
+                    }
+                ]
+            }
+
+        ]
+    },
+    {    
+        "id" : "31.1",
+        "versions" : [
+            {
+                "text" : "Døren er låst, og du har ingen nøkler som passer i låsen.",
+                "choices" : [
+                    {
+                        "text" : "Forsett",
+                        "goto" : "26",
+                        "key" : "a"
+                    }
+                ]
+            },
+            {
+                "text" : "Du bruker nøkkelen din merket 99, og låser opp døren.",
+                "conditions" : {"items" : ["nøkkel_99"]},
+                "choices" : [
+                    {
+                        "text" : "Gå inn døren",
+                        "goto" : "31.2",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "La den være",
+                        "goto" : "26",
+                        "key" : "b"
+                    }
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "31.2",
+        "versions" : [
+            {
+                "text" : "Du går inn døren. Foran deg ser du en lang korridor, og midt i korridoren ligger det en død mann. Vil du",
+                "choices" : [
+                    {
+                        "text" : "Gå ut av rommet",
+                        "goto" : "36",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Gå forbi mannen",
+                        "goto" : "35",
+                        "key" : "b"
+                    }
+
+
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "32",
+        "versions" : [
+            {
+                "text" : "Du skjenner en smerte i hånden. Det begynner å smuldre litt etter litt, og til slutt er du dø.",
+                "choices" : [
+                    {
+                        "text" : "Fortsett",
+                        "goto" : "end",
+                        "key" : "a"
+                    }
+                ]
+            },
+            {
+                "text" : "Du knuser murveggen med jernhansken",
+                "conditions" : {"items" : ["jernhanske"]},
+                "achievements" : [{"label" : "murvegg_knust"}],
+                "choices" : [
+                    {
+                        "text" : "Fortsett gjennom åpning i murveggen",
+                        "goto" : "37",
+                        "key" : "a"
+                    }
+                ]
+            }
+
+        ]
+
+    },
+    {    
+        "id" : "33",
+        "versions" : [
+            {
+                "text" : "Du kjenner at du blir sterk i hånden du tar en stein i hånden og knuser den i små biter.",
+                "items" : [{"inventory" : "Jernhanske", "label" : "jernhanske", "lyric" : "Du tar med deg hansken."}],
+                "choices" : [
+                    {
+                        "text" : "Fortsett",
+                        "goto" : "26",
+                        "key" : "a"
+                    }
+                ]
+            }
+
+        ]
+
+    },
+    {    
+        "id" : "35",
+        "versions" : [
+            {
+                "text" : "Korridoren begynner å riste, og du skjønner at du har gjort en stor feil. Du begynner å løpe, men det er nytteløst. Korridoren raser sammen og du dør.",
+                "choices" : [
+                    {
+                        "text" : "Fortsett",
+                        "goto" : "end",
+                        "key" : "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "36",
+        "versions" : [
+            {
+                "text" : "Du stønner når du ser at korridoren raser sammen. Du kjemper, men du faller dø om til slutt.",
+                "choices" : [
+                    {
+                        "text" : "Fortsett",
+                        "goto" : "end",
+                        "key" : "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "37",
+        "versions" : [
+            {
+                "text" : "Hansken lyser rødt",
+                "comment" : "For disse rommene, 37-39, returnerer man her til 29, vs 26 i orginalen",
+                "choices" : [
+                    {
+                        "text" : "Gå ut",
+                        "goto" : "29.2",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Forran deg ser du en dør, vil du gå mot den",
+                        "goto" : "38",
+                        "key" : "b"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "38",
+        "versions" : [
+            {
+                "text" : "Hansken løsner fra hånden din og flyr bort til håndtaket.",
+                "choices" : [
+                    {
+                        "text" : "Gå inn døren",
+                        "goto" : "39",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Spurt ut igjen",
+                        "goto" : "29.2",
+                        "key" : "b"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "39",
+        "versions" : [
+            {
+                "text" : "Hansken åpner døren for deg og du går inn. Midt i rommet står det en kiste.",
+                "choices" : [
+                    {
+                        "text" : "Du åpner den",
+                        "goto" : "40-happy",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Bein ut igjen",
+                        "goto" : "29.2",
+                        "key" : "b"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "40-happy",
+        "versions" : [
+            {
+                "text" : "I kisten ligger det en... gave! På en lapp står det 'Til Horn Molaug'. Du jubler! Men så ... Du åpner pakken, og stønner ... Rotter!!! Du kjenner en enorm håpløshet...",
+                "comment" : "Dette er en alternativ, lykkeligere slutt",
+                "choices" : [
+                    {
+                        "text" : "Gi etter for håpløsheten og la deg oversverme av pestrotter",
+                        "goto" : "end",
+                        "key" : "a"
+                    },
+                    {
+                        "text" : "Forsøk å holde rottene tilbake i pakken.",
+                        "goto" : "41",
+                        "key" : "b"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "41",
+        "versions" : [
+            {
+                "text" : "Du lukker pakken så tett og trygt du kan og går tilbake til byen. Folk er i sjokk over at du har overlevd, og har vendt levende tilbake. Du tar med pakken til universitetet i byen, hvor de undersøker rottene nærmere. Det viser seg at disse rottene har de opprinnelige ur-bakteriene for svartedauen. Med hjelp fra forskere over hele verden klarer universitetet å utvikle en kur for svartedauen. Du bruker mye tid på intervjuer i TV og på radio om din fantastiske ferd gjennom huset etter Horn Molaug. Etterhvert renses huset for svartedauen ved hjelp av den nyutviklede kuren, og huset settes tilbake i sin flotte orginale stand av eksperter. Huset utvikles til et museum hvor mennesker fra hele verden kommer for å oppleve stedet der kilden til kuren ble oppdaget. Gratulerer ! [SLUTT]",
+                "comment" : "Dette er en alternativ, lykkeligere slutt",
+                "triggers" : "reset_all",
+                "choices" : [
+                    {
+                        "text" : "Start på nytt",
+                        "goto" : "0",
+                        "key" : "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {    
+        "id" : "40",
+        "versions" : [
+            {
+                "text" : "I kisten ligger det en... gave! På en lapp står det 'Til Horn Molaug'. Du jubler! Men så ... Du åpner pakken, og stønner ... Rotter!!! [SLUTT]",
+                "comment" : "Dette er den orginale slutten",
+                "triggers" : "reset_all",
+                "choices" : [
+                    {
+                        "text" : "Start på nytt",
+                        "goto" : "1",
+                        "key" : "a"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+
+
+
