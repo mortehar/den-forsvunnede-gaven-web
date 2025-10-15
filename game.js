@@ -291,7 +291,7 @@ class TextGame {
         for (const choice of choices) {
             const button = document.createElement('button');
             button.className = 'choice-button';
-            button.innerHTML = `<strong>${choice.key}</strong> : ${choice.text}`;
+            button.innerHTML = choice.text;
             button.onclick = () => this.makeChoice(choice);
             this.elements.choices.appendChild(button);
         }
