@@ -9,7 +9,7 @@
      "choices": [
       {
        "text": "Gå inn ...",
-       "goto": "40-happy"
+       "goto": "1"
       }
      ]
     }
