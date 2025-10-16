@@ -246,8 +246,12 @@ class TextGame {
         const roll = Math.floor(Math.random() * 6) + 1;
         const result = this.getResultFromRoll(diceResults, roll);
         
+        // Map numbers to dice Unicode characters
+        const diceChars = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
+        const diceChar = diceChars[roll - 1];
+        
         this.elements.diceResult.innerHTML = `
-            <div class="dice-animation">🎲</div>
+            <div class="dice-final">${diceChar}</div>
             <p><strong>Du fikk ${roll} → ${result.text}</strong></p>
         `;
         
