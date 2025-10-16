@@ -141,7 +141,7 @@ class TextGame {
             if (srcContainer[key]) {
                 const autoLoots = srcContainer[key].filter(item => this.isAutoloot(item));
                 dstContainer[key].push(...autoLoots);
-                srcContainer[key] = srcContainer[key].filter(item => !autoLoots.includes(item));
+                // Don't modify the original srcContainer - it should remain intact for future playthroughs
             }
         }
     }
@@ -341,8 +341,18 @@ class TextGame {
         for (const lootType of lootTypes) {
             if (choice[lootType.getcmd]) {
                 const label = choice[lootType.getcmd];
-                // Find and add item/achievement (simplified - would need room context for full implementation)
-                console.debug(`Getting ${lootType.category}: ${label}`);
+                
+                // Find the item in current room and add it to player inventory
+                const currentRoom = this.getRoomFromId(this.currentRoomId);
+                const roomVersion = this.getRoomVersion(currentRoom);
+                
+                if (roomVersion[lootType.category]) {
+                    const item = roomVersion[lootType.category].find(item => item.label === label);
+                    if (item) {
+                        this.playerLoot[lootType.category].push(item);
+                        console.debug(`Getting ${lootType.category}: ${label}`);
+                    }
+                }
             }
             
             if (choice[lootType.delcmd]) {
