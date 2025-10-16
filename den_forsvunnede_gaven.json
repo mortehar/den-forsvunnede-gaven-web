@@ -9,7 +9,7 @@
      "choices": [
       {
        "text": "Gå inn ...",
-       "goto": "1"
+       "goto": "40-happy"
       }
      ]
     }
@@ -1254,7 +1254,27 @@
        "goto": "end"
       },
       {
-       "text": "Forsøk å holde rottene tilbake i pakken.",
+       "text": "Forsøk å holde rottene tilbake i pakken",
+       "goto": "40-struggle"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "40-struggle",
+   "versions": [
+    {
+     "text": "Du kjemper desperat for å holde rottene tilbake i pakken. Slå terning...",
+     "dice": [
+      {
+       "val": "1-4",
+       "text": "Du prøver å lukke pakken men makter ikke den umulig oppgaven med å holde rottene tilbake. De oversvermer deg.",
+       "goto": "end"
+      },
+      {
+       "val": "5-6",
+       "text": "Med overmennskelig anstrengelse klarer du å holde rottene tilbake!",
        "goto": "41"
       }
      ]
