@@ -235,11 +235,11 @@ class TextGame {
             this.elements.diceResult.innerHTML = `<div class="dice-animation">🎲</div><p>Kaster terning${dots}</p>`;
             dotCount++;
             
-            if (dotCount >= 5) {
+            if (dotCount >= 6) {
                 clearInterval(dotInterval);
                 this.completeDiceRoll(diceResults);
             }
-        }, 200);
+        }, 1000);
     }
     
     completeDiceRoll(diceResults) {
@@ -259,7 +259,7 @@ class TextGame {
             this.currentRoomId = result.goto;
             this.elements.diceSection.style.display = 'none';
             this.processRoom();
-        }, 3000);
+        }, 6000);
     }
     
     getResultFromRoll(results, roll) {

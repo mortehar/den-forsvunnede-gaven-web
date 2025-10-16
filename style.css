@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Macondo&family=Creepster&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,66 +7,136 @@
 }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: #ecf0f1;
+    font-family: 'Macondo', cursive;
+    background: 
+        radial-gradient(circle at center, rgba(12, 11, 10, 0.8) 0%, rgba(18, 16, 14, 0.9) 50%, rgba(8, 7, 6, 0.9) 100%),
+        url('title2.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #d4d4d4;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.game-title {
+    font-family: 'Protest Revolution', serif;
+    font-size: 4.8em;
+    letter-spacing: 3px;
+    color: #5a5549;
+    animation: flickerText 4s infinite alternate;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+}
+
+@keyframes flickerText {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+    75% { opacity: 0.9; }
 }
 
 .game-container {
     max-width: 800px;
     width: 100%;
-    background: rgba(44, 62, 80, 0.9);
-    border: 2px solid #95a5a6;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(145deg, #141210 0%, #1a1815 30%, #141210 70%, #0f0e0c 100%);
+    border: 3px solid #25221a;
+    border-radius: 0;
+    box-shadow: 
+        0 0 30px rgba(37, 34, 26, 0.4),
+        inset 0 0 50px rgba(0, 0, 0, 0.8),
+        0 15px 35px rgba(0, 0, 0, 0.9);
     overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
-.game-header {
-    background: linear-gradient(135deg, #8b0000, #a52a2a);
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #95a5a6;
-}
-
-.game-header h1 {
-    font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    letter-spacing: 2px;
+.game-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 98px,
+        rgba(25, 22, 18, 0.1) 100px
+    );
+    pointer-events: none;
 }
 
 .game-content {
     padding: 30px;
     min-height: 400px;
+    background: radial-gradient(ellipse at center, rgba(15, 14, 12, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+    position: relative;
+}
+
+.game-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.05"/></svg>');
+    pointer-events: none;
 }
 
 .story-text {
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-family: 'Macondo', cursive;
+    font-size: 1.2em;
+    line-height: 1.8;
     margin-bottom: 25px;
     text-align: justify;
-    background: rgba(52, 73, 94, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #cccccc;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(145deg, rgba(15, 14, 12, 0.4), rgba(10, 9, 8, 0.6));
     padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #e74c3c;
+    border: 2px solid #25221a;
+    border-radius: 0;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.story-text em {
+    color: #736b60;
+    font-style: italic;
+    text-shadow: 0 0 10px rgba(210, 180, 140, 0.5);
+}
+
+.story-text strong {
+    color: #6b5f54;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(205, 133, 63, 0.7);
 }
 
 .inventory {
-    background: rgba(39, 174, 96, 0.1);
-    border: 1px solid #27ae60;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
+    background: linear-gradient(145deg, #0a0908, #141210);
+    border: 2px solid #25221a;
+    border-radius: 0;
+    padding: 20px;
+    margin-top: 25px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 .inventory h3 {
-    color: #27ae60;
-    margin-bottom: 10px;
+    font-family: 'Macondo', cursive;
+    color: #5a4f44;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
 }
 
 .inventory ul {
@@ -73,8 +145,20 @@ body {
 }
 
 .inventory li {
-    padding: 5px 0;
-    border-bottom: 1px solid rgba(39, 174, 96, 0.3);
+    color: #cccccc;
+    padding: 8px 0;
+    border-bottom: 1px solid #1a1815;
+    font-family: 'Macondo', cursive;
+    position: relative;
+    padding-left: 20px;
+}
+
+.inventory li::before {
+    content: '☠';
+    position: absolute;
+    left: 0;
+    color: #25221a;
+    font-size: 1.2em;
 }
 
 .inventory li:last-child {
@@ -82,86 +166,146 @@ body {
 }
 
 .choices {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .choice-button {
     display: block;
     width: 100%;
+    margin: 12px 0;
     padding: 15px 20px;
-    margin: 10px 0;
-    background: linear-gradient(135deg, #34495e, #2c3e50);
-    color: #ecf0f1;
-    border: 2px solid #95a5a6;
-    border-radius: 8px;
-    font-size: 1em;
+    background: linear-gradient(145deg, #0a0908, #0f0e0c);
+    border: 2px solid #1a1815;
+    border-radius: 0;
+    color: #8a7f73;
+    font-family: 'Macondo', cursive;
+    font-size: 1.1em;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: left;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.choice-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 51, 51, 0.2), transparent);
+    transition: left 0.5s ease;
 }
 
 .choice-button:hover {
-    background: linear-gradient(135deg, #4a6741, #5d7c53);
-    border-color: #27ae60;
+    background: linear-gradient(145deg, #1d1a15, #252118);
+    border-color: #33291e;
+    color: #847559;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(51, 41, 30, 0.3);
+    text-shadow: 0 0 10px rgba(132, 117, 89, 0.5);
+}
+
+.choice-button:hover::before {
+    left: 100%;
 }
 
 .choice-button:active {
     transform: translateY(0);
+    background: linear-gradient(145deg, #3a3024, #4a3d2a);
 }
 
 .dice-section {
     text-align: center;
-    margin: 25px 0;
-    padding: 20px;
-    background: rgba(142, 68, 173, 0.1);
-    border: 1px solid #8e44ad;
-    border-radius: 10px;
+    margin-top: 25px;
+    padding: 25px;
+    background: linear-gradient(145deg, #141210, #0d0d0d);
+    border: 2px solid #25221a;
+    border-radius: 0;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
-.dice-button {
-    background: linear-gradient(135deg, #8e44ad, #9b59b6);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.dice-section h4 {
+    font-family: 'Macondo', cursive;
+    color: #5a4f44;
     margin-bottom: 15px;
+    font-size: 1.4em;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    text-align: left;
 }
 
-.dice-button:hover {
-    background: linear-gradient(135deg, #9b59b6, #8e44ad);
-    transform: scale(1.05);
-}
-
-.dice-button:disabled {
-    background: #7f8c8d;
-    cursor: not-allowed;
-    transform: none;
+.dice-section p {
+    text-align: left;
 }
 
 .dice-result {
-    font-size: 1.1em;
-    margin-top: 15px;
-    padding: 10px;
-    background: rgba(52, 152, 219, 0.1);
-    border-radius: 5px;
-    min-height: 40px;
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin: 15px 0;
+    padding: 15px;
+    background: linear-gradient(145deg, #0f0e0c, #1a1815);
+    border: 1px solid #25221a;
+    border-radius: 0;
+    color: #8a7f73;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+#rollDice {
+    background: linear-gradient(145deg, #141210, #1a1815);
+    border: 3px solid #25221a;
+    border-radius: 0;
+    color: #736b60;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-family: 'Macondo', cursive;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+#rollDice:hover {
+    background: linear-gradient(145deg, #1a1815, #25221a);
+    color: #8a7f73;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+#rollDice:disabled {
+    background: linear-gradient(145deg, #1a1a1a, #333333);
+    border-color: #666666;
+    color: #999999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 .dice-animation {
-    font-size: 2em;
-    animation: roll 0.5s ease-in-out;
+    font-size: 4em;
+    margin: 20px 0;
+    animation: roll 1s infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 51, 51, 0.5));
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
 }
 
 @keyframes roll {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(90deg); }
-    50% { transform: rotate(180deg); }
-    75% { transform: rotate(270deg); }
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(1); }
+    75% { transform: rotate(270deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .game-footer {
@@ -188,34 +332,43 @@ body {
         padding: 10px;
     }
     
-    .game-header h1 {
-        font-size: 2em;
+    .game-title {
+        font-size: 2.2em;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
     }
     
     .game-content {
-        padding: 20px;
+        padding: 15px;
     }
     
     .story-text {
-        font-size: 1em;
+        font-size: 1.1em;
         padding: 15px;
+    }
+    
+    .choice-button {
+        padding: 12px 15px;
+        font-size: 1em;
     }
 }
 
-/* Dark theme scrollbar */
+/* Horror-themed scrollbar */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #2c3e50;
+    background: #000000;
+    border: 1px solid #1a1815;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #95a5a6;
-    border-radius: 6px;
+    background: linear-gradient(145deg, #25221a, #3a352e);
+    border-radius: 0;
+    border: 1px solid #1a1815;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #bdc3c7;
+    background: linear-gradient(145deg, #3a352e, #4a453e);
 }
