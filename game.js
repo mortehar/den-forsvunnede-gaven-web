@@ -8,6 +8,12 @@ class TextGame {
         };
         this.enableCheats = false;
         
+        // Background music setup
+        this.backgroundAudio = new Audio('Atmosphere.mp3');
+        this.backgroundAudio.loop = true;
+        this.backgroundAudio.volume = 0.5;
+        this.isMuted = false;
+        
         this.elements = {
             storyText: document.getElementById('storyText'),
             inventory: document.getElementById('inventory'),
@@ -15,10 +21,13 @@ class TextGame {
             choices: document.getElementById('choices'),
             diceSection: document.getElementById('diceSection'),
             rollDice: document.getElementById('rollDice'),
-            diceResult: document.getElementById('diceResult')
+            diceResult: document.getElementById('diceResult'),
+            muteToggle: document.getElementById('muteToggle'),
+            volumeSlider: document.getElementById('volumeSlider')
         };
         
         this.init();
+        this.setupAudioControls();
     }
     
     async init() {
@@ -345,6 +354,40 @@ class TextGame {
                 }
                 console.debug(`Removing ${lootType.category}: ${label}`);
             }
+        }
+    }
+    
+    setupAudioControls() {
+        // Start music on first user interaction
+        document.addEventListener('click', () => {
+            if (this.backgroundAudio.paused) {
+                this.backgroundAudio.play().catch(e => console.log('Audio play failed:', e));
+            }
+        }, { once: true });
+        
+        // Mute toggle
+        this.elements.muteToggle.addEventListener('click', () => {
+            this.toggleMute();
+        });
+        
+        // Volume slider
+        this.elements.volumeSlider.addEventListener('input', (e) => {
+            this.setVolume(e.target.value);
+        });
+    }
+    
+    toggleMute() {
+        this.isMuted = !this.isMuted;
+        this.backgroundAudio.muted = this.isMuted;
+        this.elements.muteToggle.textContent = this.isMuted ? '🔇' : '🔊';
+    }
+    
+    setVolume(volume) {
+        this.backgroundAudio.volume = volume;
+        if (volume == 0) {
+            this.elements.muteToggle.textContent = '🔇';
+        } else {
+            this.elements.muteToggle.textContent = '🔊';
         }
     }
 }
